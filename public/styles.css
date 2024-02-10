@@ -1,6 +1,7 @@
 body{
     margin: 0;
     font-family: Roboto; 
+    background: #4e4c4e;
   }
   .wrapper{
     max-width: 960px;
