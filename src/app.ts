@@ -1,31 +1,18 @@
-interface IsPerson{
-    name: string;
-    age: number
-    speak(a: string): void;
-    spend(a: number): number;
-}
-
-const me: IsPerson = {
-    name: 'Shaun',
-    age: 30,
-    speak(text: string): void {
-        console.log(text);
-    },
-    spend(amount: number): number{
-        console.log('I spent', amount);
-        return amount;
-    }
-}
-
-const greetPerson = (person: IsPerson) => {
-    console.log('hello', person.name);
-}
-
-greetPerson(me);
-
-console.log(me);
-
 import { Invoice } from './classes/Invoice.js';
+import { Payment } from './classes/Payment.js';
+import { HasFormatter } from './interfaces/HasFormatter.js';
+
+let docOne: HasFormatter;
+let docTwo: HasFormatter;
+
+docOne = new Invoice('yoshi', 'web work', 250);
+docTwo = new Payment('yoshi', 'plumbing work', 200);
+
+let docs: HasFormatter[] = [];
+docs.push(docOne);
+docs.push(docTwo);
+
+console.log(docs);
 
 const invOne = new Invoice('ryan', 'work on the ryan website', 250);
 const invTwo = new Invoice('mario', 'work on the mario website', 300);
@@ -39,6 +26,7 @@ invoices.forEach(inv => {
 });
 
 const form = document.querySelector('.new-item-form') as HTMLFormElement;
+
 
 //Inputs
 const type = document.querySelector('#type') as HTMLSelectElement;
