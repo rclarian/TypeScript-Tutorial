@@ -12,3 +12,6 @@ tsc -w
 
 --Initialize
 tsc --init
+
+--documents
+https://www.typescriptlang.org/docs/
